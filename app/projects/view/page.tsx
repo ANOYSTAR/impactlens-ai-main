@@ -1,0 +1,128 @@
+import Link from "next/link";
+import { ArrowLeft, MapPin, CalendarDays, Image as ImageIcon, Search, Database, ShieldCheck, FileCheck } from "lucide-react";
+import { getCloudinaryMedia } from "@/lib/cloudinary-data";
+import { media as demo } from "@/lib/demo-data";
+
+export default async function ProjectView({ searchParams }: { searchParams: Promise<{ project?: string }> }) {
+  const params = await searchParams;
+  const project = params.project ? decodeURIComponent(params.project) : "Impact Project";
+  const live = await getCloudinaryMedia(500);
+  const items = live.length ? live : demo;
+  const assets = items.filter((m) => m.project === project);
+  const location = assets[0]?.location || "Unknown location";
+
+  return (
+    <>
+      <div className="topbar">
+        <div>
+          <Link href="/projects" className="backLink">
+            <ArrowLeft size={15} /> Back to projects
+          </Link>
+          <div className="eyebrow" style={{ marginTop: 18 }}>
+            Project workspace
+          </div>
+          <h1>{project}</h1>
+          <p className="muted">
+            {location} · {live.length ? "Live Cloudinary evidence" : "Demo evidence"}
+          </p>
+        </div>
+        <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+          <span className="badge">{assets.length ? "Active" : "No evidence"}</span>
+          <Link
+            href={`/report/${encodeURIComponent(project)}/compliance`}
+            className="btn primary"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+              backgroundColor: "#2ECC71",
+              color: "#0A0F0A",
+              fontWeight: 600,
+              padding: "10px 18px",
+              borderRadius: 8,
+              textDecoration: "none",
+              boxShadow: "0 0 15px rgba(46, 204, 113, 0.3)",
+            }}
+          >
+            <ShieldCheck size={16} /> Generate Compliance Certificate
+          </Link>
+        </div>
+      </div>
+
+      <div className="statsGrid section">
+        <div className="stat">
+          <span className="muted">Project assets</span>
+          <strong>{assets.length}</strong>
+        </div>
+        <div className="stat">
+          <span className="muted">Locations</span>
+          <strong>{new Set(assets.map((x) => x.location)).size}</strong>
+        </div>
+        <div className="stat">
+          <span className="muted">Tagged assets</span>
+          <strong>{assets.filter((x) => (x.tags || []).length).length}</strong>
+        </div>
+        <div className="stat">
+          <span className="muted">Traceability</span>
+          <strong>{assets.length ? "100%" : "—"}</strong>
+        </div>
+      </div>
+
+      <div className="card section">
+        <div className="sectionHeader">
+          <div>
+            <div className="eyebrow">Evidence library</div>
+            <h2>Project media</h2>
+          </div>
+          <div style={{ display: "flex", gap: 10 }}>
+            <Link href={`/report/${encodeURIComponent(project)}/compliance`} className="btn" style={{ borderColor: "#2ECC71", color: "#2ECC71" }}>
+              <FileCheck size={15} style={{ marginRight: 6 }} /> Compliance Report
+            </Link>
+            <Link href="/search" className="btn">
+              <Search size={15} /> Search evidence
+            </Link>
+          </div>
+        </div>
+        {assets.length ? (
+          <div className="mediaGrid">
+            {assets.map((asset: any) => (
+              <Link
+                href={live.length ? `/media/view?id=${encodeURIComponent(asset.asset_id || asset.id)}` : "/media"}
+                className="card mediaCard"
+                key={asset.asset_id || asset.id}
+                style={{ textDecoration: "none", color: "inherit", display: "block" }}
+              >
+                <div className="mediaThumb">
+                  <img src={asset.src} alt={asset.title} />
+                </div>
+                <div className="mediaInfo">
+                  <span className="badge">{asset.score}% evidence confidence</span>
+                  <h3 style={{ marginTop: 10 }}>{asset.title}</h3>
+                  <p className="muted">
+                    <MapPin size={13} style={{ verticalAlign: "-2px" }} /> {asset.location}
+                  </p>
+                  <p className="muted">
+                    <CalendarDays size={13} style={{ verticalAlign: "-2px" }} /> {asset.date}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        ) : (
+          <div className="emptyState">
+            <ImageIcon size={28} />
+            <h3>No evidence yet</h3>
+            <p className="muted">Upload evidence with this project name to populate the workspace.</p>
+          </div>
+        )}
+      </div>
+
+      <div className="card section">
+        <Database size={15} />
+        <span className="muted" style={{ marginLeft: 8 }}>
+          Project data source: {live.length ? "Cloudinary Admin API" : "demo data"}
+        </span>
+      </div>
+    </>
+  );
+}

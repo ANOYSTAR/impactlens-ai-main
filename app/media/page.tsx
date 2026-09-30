@@ -1,0 +1,4 @@
+import { getCloudinaryMedia } from "@/lib/cloudinary-data";
+import { media as demoMedia } from "@/lib/demo-data";
+import MediaLibraryClient from "@/components/media-library-client";
+export default async function Media(){const live=await getCloudinaryMedia(100);const items=live.length?live:demoMedia;return <><div className="topbar"><div><div className="eyebrow">{live.length?"Live Cloudinary evidence":"Evidence repository"}</div><h1>Media Library</h1><p className="muted">{live.length?`${live.length} live assets from your Cloudinary account`:"Demo mode — add Cloudinary credentials for live assets."}</p></div><a className="btn primary" href="/upload">+ Upload</a></div><MediaLibraryClient initialItems={items} live={live.length>0}/></>}

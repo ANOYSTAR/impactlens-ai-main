@@ -1,0 +1,2 @@
+import SearchClient from "@/components/search-client";
+export default function SearchPage(){ return <><div className="topbar"><div><div className="eyebrow">Semantic discovery</div><h1>AI Search</h1><p className="muted">Search your live Cloudinary evidence using natural-language terms.</p></div></div><SearchClient/></>; }
