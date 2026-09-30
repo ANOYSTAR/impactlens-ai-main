@@ -1,4 +1,7 @@
-#ImpactLens Pro (An "Integrity-First" Media Pipeline) #
+<img width="1600" height="1066" alt="image" src="https://github.com/user-attachments/assets/13257edb-f95f-443b-b0a4-5ff28911a730" />
+
+  ImpactLens Pro (An "Integrity-First" Media Pipeline)
+Stop Greenwashing. Prove Impact.</b><br/> The first media platform that verifies every field photo's GPS, timestamp & authenticity before it becomes a donor report.
 
 "To beat the basic ImpactLens while avoiding the overwhelming state-machine complexity of full-blown ProofGround, you should build ImpactLens Pro.It takes the core media strengths of ImpactLens (Cloudinary, Next.js, before-and-after sliders) and merges it with a high-value enterprise feature: AI-Powered Greenwashing & Metadata Verification.What Makes ImpactLens Pro Better?FeatureBasic ImpactLensImpactLens Pro (The Upgrade)Core ActionUploads photos and organizes them on a timeline.Uploads photos, extracts hidden data, and cross-checks authenticity. "
 
@@ -7,9 +10,23 @@
 [![Cloudinary](https://img.shields.io/badge/Cloudinary-Media%20Intelligence-3448C5?logo=cloudinary)](https://cloudinary.com/)
 [![Vercel](https://img.shields.io/badge/Vercel-Deploy-black?logo=vercel)](https://vercel.com/)
 
-ImpactLens AI transforms field photos and videos into **searchable, traceable, AI-analyzed evidence** for NGOs, governments, sustainability teams, and impact-driven organizations.
+ImpactLens Pro transforms field photos and videos into **searchable, traceable, AI-analyzed evidence** for NGOs, governments, sustainability teams, and impact-driven organizations.
 
-Built for **Code Cubicle 6.0 — Cloudinary Problem Statement 02**.
+Basic ImpactLens
+Uses Cloudinary as S3 + tags. Every team does this.
+"We have too many photos" - boring ops problemZero. Anyone can build a timeline
+"Here's a nice report "
+
+
+ImpactLens Pro (An "Integrity-First" Media Pipeline)
+
+"How do we know this impact is real?" high-stakes trust problem
+Uses Cloudinary as an Intelligence Layer: Duplicate detection (pHash), EXIF extraction, Moderation, Secure URL signing
+Defensible. You build a verification engine on top of Cloudinary metadata.
+Here's an ditor-Ready Compliance Certificate
+
+Built for **Code Cubicle 6.0 — Cloudinary 
+BY : GREY CODER
 
 ---
 
@@ -18,9 +35,8 @@ Built for **Code Cubicle 6.0 — Cloudinary Problem Statement 02**.
 
 The latest ImpactLens interface uses a **premium AI command-center aesthetic**: obsidian surfaces, emerald illumination, glassmorphism navigation, evidence cards, AI insights, project intelligence, and an evidence assistant.
 
-<p align="center">
-  <img src="./docs/impactlens-dashboard.svg" alt="ImpactLens AI premium dashboard interface" width="100%"/>
-</p>
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/20a06b4c-457f-456f-aefa-70a8bd35dc05" />
+
 
 ### Interface Highlights
 
@@ -37,9 +53,7 @@ The latest ImpactLens interface uses a **premium AI command-center aesthetic**: 
 
 ### Impact Intelligence Dashboard
 
-<p align="center">
-  <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=80" alt="Sustainability and renewable-energy evidence" width="900"/>
-</p>
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/9cc08420-ab88-4f82-9bed-f06e2d0cd43e" />
 
 ### Project & Evidence Workspace
 
@@ -464,7 +478,7 @@ CLOUDINARY_ANALYSIS_MODEL=captioning
 
 ## 🔐 Cloudinary Integration
 
-ImpactLens uses a **server-generated signed upload flow**:
+ImpactLens Pro uses a **server-generated signed upload flow**:
 
 ```text
 Browser
@@ -576,7 +590,7 @@ npm start
 
 ## 🎯 Code Cubicle 6.0 Alignment
 
-ImpactLens addresses the Cloudinary challenge through:
+ImpactLens Pro addresses the Cloudinary challenge through:
 
 - Large image/video collection analysis
 - Project and activity identification
@@ -651,29 +665,8 @@ Compelling Impact Stories
 - [ ] Batch media processing
 - [ ] Advanced impact KPIs
 
----
-
-## 🏆 Hackathon Value Proposition
-
-**ImpactLens AI is not just a media library.**
-
-It turns:
-
-> **Media → Evidence → Intelligence → Impact Story**
-
-The platform combines Cloudinary's media infrastructure with AI-assisted analysis and a purpose-built impact intelligence interface to make field evidence easier to organize, discover, compare, and communicate.
-
----
-
-## 🔗 Links
-
-- **GitHub:** https://github.com/Mohitrath/impactlens-ai
-- **Cloudinary:** https://cloudinary.com/
-- **Vercel:** https://vercel.com/
-
----
-
-## 👥 Team
+ 👥 Team
+ Grey coder
 
 Built for **Code Cubicle 6.0**.
 
@@ -687,7 +680,7 @@ This project is provided for hackathon and educational purposes.
 
 <div align="center">
 
-### 🌱 ImpactLens AI
+### 🌱 ImpactLens Pro (An "Integrity-First" Media Pipeline)
 
 **AI-powered media intelligence for real-world impact**
 
