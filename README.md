@@ -549,7 +549,7 @@ touch .env.local
 ```
 3. Edit it
 The easiest way is:
-bash```
+```bash
 nano .env.local
 ```
 ```env
