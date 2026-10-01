@@ -529,8 +529,8 @@ The Cloudinary API secret remains server-side and is never exposed to the browse
 ### 1. Clone
 
 ```bash
-git clone https://github.com/Mohitrath/impactlens-ai.git
-cd impactlens-ai
+git clone  https://github.com/ANOYSTAR/impactlens-ai-main
+cd impactlens-ai-main
 ```
 
 ### 2. Install
@@ -543,12 +543,24 @@ npm install
 
 Create `.env.local`:
 
+To Create .env.local
+```bash
+touch .env.local
+```
+3. Edit it
+The easiest way is:
+bash```
+nano .env.local
+```
 ```env
 NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=your_cloud_name
 CLOUDINARY_API_KEY=your_api_key
 CLOUDINARY_API_SECRET=your_api_secret
 CLOUDINARY_ANALYSIS_MODEL=captioning
 ```
+[ 
+
+
 
 ### 4. Run
 
